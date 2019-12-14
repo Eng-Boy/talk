@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<audio src="http://music.163.com/song/media/outer/url?id=1364343491.mp3"  autoplay="autoplay"  preload="auto"> </audio><!-- 背景音乐 -->
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#hitokoto {
+				font-size: 40px;
+				margin: 100px auto;
+				text-align: center;
+				font-family: "仿宋";
+				font-weight: bold;
+				background: -webkit-linear-gradient( right, #ef32d9, #89fffd);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+		</style>
+	</head>
+	<body>
+		 <body background="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574956341863&di=267d9bd15126ec20f2405495fec0e24b&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F038647156fa156e6ac7257948a0810c.gif">	<!-- 背景图片 --> 
+		<p id="hitokoto">我想一下</p>
+		<!-- 以下写法，选取一种即可 -->
+
+		<!-- 现代写法，推荐 -->
+		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+		<!--End-->
+		<script>
+			fetch('https://v1.hitokoto.cn/?c=f&encode=json')
+				.then(function(res) {
+					return res.json();
+				})
+				.then(function(data) {
+					var hitokoto = document.getElementById('hitokoto');
+					hitokoto.innerText = data.hitokoto;
+				})
+				.catch(function(err) {
+					console.error(err);
+				})
+		</script>
+	</body>
+</html>
