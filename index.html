@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<audio src="http://music.163.com/song/media/outer/url?id=1384026889.mp3"  autoplay="autoplay"  preload="auto"> </audio><!-- 背景音乐 -->
-		<meta charset="utf-8">
-		<title>其实你还是不懂</title>
-		<style>
-			#hitokoto {
+<html style="font-size: 85.3333px;">
+	
+<head>
+	<audio src="http://music.163.com/song/media/outer/url?id=1384026889.mp3"  autoplay="autoplay"  preload="auto"> </audio><!-- 背景音乐 -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta name="applicable-device" content="mobile">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<title>【2020元旦倒计时】</title>
+<center>
+<style>
+#hitokoto {
 				font-size: 40px;
 				margin: 100px auto;
 				text-align: center;
@@ -15,34 +23,59 @@
 				-webkit-background-clip: text;
 				-webkit-text-fill-color: transparent;
 			}
-		</style>
-	</head>
-	<body>
+.timebox2 div,timebox2 span,timebox2 div span{color: #FF7EDA !important;}
+.timebox2 .timecounter span{color: #BDBDBD !important;}
+.timetext{width: 100%;text-align: center;}
+.timetexttitle{font-size:0.3rem;margin-bottom: 15px;color: #fff;}
+.timetextintro{font-size: 0.22rem;margin-bottom: 15px;color: #fff;padding: 0 1.52rem;box-sizing: border-box;}
+.timecounter{font-size: 0.6rem;}
+.txt{padding: 0 0.2rem;box-sizing:border-box;}
+.clearbg5{display: block;clear: both;width: 100%;height: 0.16rem;overflow: hidden;background-color: #eee;}
+.txt p{line-height: 30px;margin-top: 0.2rem;}
+.txt p img{width: 100%;}
+.timecounter span{color: #fff;}
 	
-		
-		 <body background="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574956341863&di=267d9bd15126ec20f2405495fec0e24b&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F038647156fa156e6ac7257948a0810c.gif">	<!-- 背景图片 --> 
-		<p id="hitokoto">我想一下</p>
-		<!-- 以下写法，选取一种即可 -->
+</style>
 
-		<!-- 现代写法，推荐 -->
-		<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
-		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-		<!--End-->
-		<script>
-			fetch('https://v1.hitokoto.cn/?c=f&encode=json')
-				.then(function(res) {
-					return res.json();
-				})
-				.then(function(data) {
-					var hitokoto = document.getElementById('hitokoto');
-					hitokoto.innerText = data.hitokoto;
-				})
-				.catch(function(err) {
-					console.error(err);
-				})
-		</script>
-			 <center><iframe src="//player.bilibili.com/player.html?aid=79816470&cid=136600863&page=1" scrolling="no" width="720"border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-			 </center>
-	</body>
+<body>
+<br/>
+<div class="timebox2">
+	<div class="timetext">
+		<div class="timetexttitle">2020年兰敏日倒计时</div>
+		<div class="timetextintro">兰敏日时间：2020年10月30日 农历九月十四 <br/>
+	  星期五</div>
+		<div id="hitokoto">目前距离2020年兰敏日还有<br/></div>
+		<div class="timecounter">
+			<span id="t_d">0 天</span>
+			<span id="t_h">10 时</span>
+			<span id="t_m">24 分</span>
+<br/>
+			<span id="t_s">8 秒</span>
+			
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+function getRTime() {
+	var EndTime = new Date("2020/10/30 00:00:00"); //截止时间
+	var NowTime = new Date();
+	var t = EndTime.getTime() - NowTime.getTime();
+	var d = Math.floor(t / 1000 / 60 / 60 / 24);
+	var h = Math.floor(t / 1000 / 60 / 60 % 24);
+	var m = Math.floor(t / 1000 / 60 % 60);
+	var s = Math.floor(t / 1000 % 60);
+
+	document.getElementById("t_d").innerHTML = d + " 天";
+	document.getElementById("t_h").innerHTML = h + " 时";
+	document.getElementById("t_m").innerHTML = m + " 分";
+	document.getElementById("t_s").innerHTML = s + " 秒";
+}
+setInterval(getRTime, 1000);
+</script>
+</div>
+</center>
+<body style="background:url(https://yangbaimg.syoogame.com/tmp/000/00/00/00/5dcf8ad028c56.jpg);">
+	
+</body>
 </html>
